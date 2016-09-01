@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Web.Mvc;
+using TeamWork.Models;
+using System.Net;
+
+
 
 namespace TeamWork.Models
 {
+   
     public class Post
     {
         public Post()
@@ -23,9 +28,11 @@ namespace TeamWork.Models
         [Required]
         public string Body { get; set; }
 
-        [Required]
+     
         public DateTime Date { get; set; }
 
         public ApplicationUser Author { get; set; }
     }
+
+    
 }

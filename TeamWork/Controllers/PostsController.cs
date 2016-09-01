@@ -10,8 +10,11 @@ using TeamWork.Models;
 
 namespace TeamWork.Controllers
 {
+    [ValidateInput(false)]
+
     public class PostsController : Controller
     {
+       
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
@@ -50,6 +53,7 @@ namespace TeamWork.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.Date=DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
